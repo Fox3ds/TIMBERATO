@@ -1,0 +1,13 @@
+# depslib dependency file v1.0
+1693681797 source:c:\users\pedro\onedrive\Área de trabalho\atividade programaçaõ\timberato2\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+
+1693343907 source:c:\users\laboratorio\desktop\nova pasta\main.c
+	<stdio.h>
+	<stdlib.h>
+	<locale.h>
+	<string.h>
+
