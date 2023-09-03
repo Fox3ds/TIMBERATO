@@ -534,22 +534,32 @@ while(1)
                         aux_local = compara(pessoa->local, prince_local);
                         aux_cidade = compara(pessoa->cidade, prince_cidade);
 
-                        printf("\n%s", pessoa->nome);
 
 
                         for(k=0;k<strlen(prince_filme);k++)
                         {
-                            for(i=k;i<',';i++)
+                            i==0;
+
+                            do
                             {
 
-                                espe_filme[i] = prince_filme[i];
-                                compara(pessoa->filme, espe_filme);
-                                if (aux_filme != 0)
-                                {
 
-                                    cont++;
 
-                                }
+                                espe_filme[i] = prince_filme[k];
+                                printf("\n%i",i);
+                                printf("%s", espe_filme);
+                                k++;
+                                i++;
+
+
+                            }while(espe_filme[i]<=',');
+                            printf("\ntanamao");
+
+                            if(compara(pessoa->filme, espe_filme)!= 0)
+                            {
+                                cont++;
+                                printf("\nentroK\n");
+
 
 
                             }
