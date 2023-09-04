@@ -248,6 +248,7 @@ int main()
 
 
     char prince_nome[50];
+
     char prince_filme[50];
     char prince_hobbie[50];
     char prince_cidade[50];
@@ -538,8 +539,7 @@ while(1)
 
                         for(k=0;k<(strlen(prince_filme));k++)
                         {
-                            i=0;
-                            j=0;
+
 
                             do
                             {
@@ -550,27 +550,27 @@ while(1)
                                 printf("\ni=%i",i);
                                 printf("\nk=%i",k);
                                 printf("\n string %s", espe_filme);
-                                 printf("\n string %c", prince_filme[k]);
+                                 printf("\n string %c", prince_filme[i]);
 
                                 k++;
                                 i++;
 
-                                if(espe_filme[i]==',')
+                                if(prince_filme[k]==',')
                                 {
-                                    j=1;
+                                    i=0;
                                     k++;
                                 }
 
                                 printf("\n string %s", prince_filme);
-                                printf("\n string %c", prince_filme[k]);
 
 
 
 
 
-                            }while(j!=1);
+
+                            }while(i!=0);
                             printf("\ntanamao");
-                            printf("\n string2%s", espe_filme);
+                            printf("\n string2 %s", espe_filme);
 
                             if(compara(pessoa->filme, espe_filme)!= 0)
                             {
@@ -579,6 +579,8 @@ while(1)
                             }
 
                         }
+
+
 
                         if(aux_hobbie != 0)
                         {
