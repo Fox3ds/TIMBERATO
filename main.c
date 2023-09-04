@@ -536,9 +536,10 @@ while(1)
 
 
 
-                        for(k=0;k<strlen(prince_filme);k++)
+                        for(k=0;k<(strlen(prince_filme));k++)
                         {
-                            i==0;
+                            i=0;
+                            j=0;
 
                             do
                             {
@@ -546,22 +547,35 @@ while(1)
 
 
                                 espe_filme[i] = prince_filme[k];
-                                printf("\n%i",i);
-                                printf("%s", espe_filme);
+                                printf("\ni=%i",i);
+                                printf("\nk=%i",k);
+                                printf("\n string %s", espe_filme);
+                                 printf("\n string %c", prince_filme[k]);
+
                                 k++;
                                 i++;
 
+                                if(espe_filme[i]==',')
+                                {
+                                    j=1;
+                                    k++;
+                                }
 
-                            }while(espe_filme[i]<=',');
+                                printf("\n string %s", prince_filme);
+                                printf("\n string %c", prince_filme[k]);
+
+
+
+
+
+                            }while(j!=1);
                             printf("\ntanamao");
+                            printf("\n string2%s", espe_filme);
 
                             if(compara(pessoa->filme, espe_filme)!= 0)
                             {
                                 cont++;
                                 printf("\nentroK\n");
-
-
-
                             }
 
                         }
