@@ -131,6 +131,7 @@ void cadastro(struct dados *d1, int n_cadastro)
 
 //variavel para compatibilidade
 float cont = 0;
+float total = 0;
 int aux = 0;
 char pessoa_principal_nome[50];
 char pessoa_principal_cidade[50];
@@ -488,6 +489,99 @@ while(1)
         strcpy(prince_hobbie, pessoa_principal_hobbie);
         strcpy(prince_local, pessoa_principal_local);
 
+        if(compara(prince_filme, ",")!=0)
+        {
+            for(k=0;k<(strlen(prince_filme));k++)
+            {
+                do
+                {
+
+                    k++;
+                    i++;
+
+                    if(prince_filme[k]==','||k>(strlen(prince_filme)))
+                    {
+                        i=0;
+                        k++;
+                        total++;
+                    }
+                }while(i!=0);
+            }
+        }
+        else{
+            total++;
+        }
+        //HOBBIE
+        if(compara(prince_hobbie, ",")!=0)
+        {
+            for(k=0;k<(strlen(prince_hobbie));k++)
+            {
+                do
+                {
+
+                    k++;
+                    i++;
+
+                    if(prince_hobbie[k]==','||k>(strlen(prince_hobbie)))
+                    {
+                        i=0;
+                        k++;
+                        total++;
+                    }
+                }while(i!=0);
+            }
+        }
+        else{
+            total++;
+        }
+
+        //LOCAL
+        if(compara(prince_local, ",")!=0)
+        {
+            for(k=0;k<(strlen(prince_local));k++)
+            {
+                do
+                {
+
+                    k++;
+                    i++;
+
+                    if(prince_local[k]==','||k>(strlen(prince_local)))
+                    {
+                        i=0;
+                        k++;
+                        total++;
+                    }
+                }while(i!=0);
+            }
+        }
+        else{
+            total++;
+        }
+
+        //CIDADE
+        if(compara(prince_cidade, ",")!=0)
+        {
+            for(k=0;k<(strlen(prince_cidade));k++)
+            {
+                do
+                {
+
+                    k++;
+                    i++;
+
+                    if(prince_cidade[k]==','||k>(strlen(prince_cidade)))
+                    {
+                        i=0;
+                        k++;
+                        total++;
+                    }
+                }while(i!=0);
+            }
+        }
+        else{
+            total++;
+        }
 
 
 
@@ -530,83 +624,157 @@ while(1)
 
 
 
+                        aux_filme = compara(prince_filme, ",");
+                        aux_hobbie = compara(prince_hobbie, ",");
+                        aux_local = compara(prince_local, ",");
+                        aux_cidade = compara(prince_cidade, ",");
 
-                        aux_hobbie = compara(pessoa->hobbie, prince_hobbie);
-                        aux_local = compara(pessoa->local, prince_local);
-                        aux_cidade = compara(pessoa->cidade, prince_cidade);
-
-
-
+                    //FILMES
+                    if(aux_filme!= 0)
+                    {
                         for(k=0;k<(strlen(prince_filme));k++)
                         {
-
+                            memset(espe_filme, 0, (strlen(prince_filme)));
 
                             do
                             {
-
-
-
                                 espe_filme[i] = prince_filme[k];
-                                printf("\ni=%i",i);
-                                printf("\nk=%i",k);
-                                printf("\n string %s", espe_filme);
-                                 printf("\n string %c", prince_filme[i]);
-
                                 k++;
                                 i++;
 
-                                if(prince_filme[k]==',')
+                                if(prince_filme[k]==','||k>(strlen(prince_filme)))
                                 {
                                     i=0;
                                     k++;
                                 }
-
-                                printf("\n string %s", prince_filme);
-
-
-
-
-
-
                             }while(i!=0);
-                            printf("\ntanamao");
-                            printf("\n string2 %s", espe_filme);
 
                             if(compara(pessoa->filme, espe_filme)!= 0)
                             {
                                 cont++;
-                                printf("\nentroK\n");
                             }
-
                         }
+                    }
+                    else if(compara(pessoa->filme, prince_filme)!=0)
+                    {
+                        cont++;
+
+                    }
 
 
-
-                        if(aux_hobbie != 0)
+                    //HOBBIE
+                    if(aux_hobbie!= 0)
+                    {
+                        for(k=0;k<(strlen(prince_hobbie));k++)
                         {
-                            //cont++;
+                            memset(espe_hobbie, 0, (strlen(prince_hobbie)));
 
+                            do
+                            {
+                                espe_hobbie[i] = prince_hobbie[k];
+                                k++;
+                                i++;
+
+                                if(prince_hobbie[k]==','||k>(strlen(prince_hobbie)))
+                                {
+                                    i=0;
+                                    k++;
+                                }
+                            }while(i!=0);
+
+                            if(compara(pessoa->hobbie, espe_hobbie)!= 0)
+                            {
+                                cont++;
+                            }
                         }
-                        if(aux_local != 0)
+                    }
+                    else if(compara(pessoa->hobbie, prince_hobbie)!=0)
+                    {
+                        cont++;
+                    }
+
+
+                     //LOCAL
+                    if(aux_local!= 0)
+                    {
+                        for(k=0;k<(strlen(prince_local));k++)
                         {
-                            //cont++;
+                            memset(espe_local, 0, (strlen(prince_local)));
 
+                            do
+                            {
+                                espe_local[i] = prince_local[k];
+                                k++;
+                                i++;
+
+                                if(prince_local[k]==','||k>(strlen(prince_local)))
+                                {
+                                    i=0;
+                                    k++;
+                                }
+                            }while(i!=0);
+
+                            if(compara(pessoa->local, espe_local)!= 0)
+                            {
+                                cont++;
+                            }
                         }
-                        if(aux_cidade != 0)
+                    }
+                    else if(compara(pessoa->local, prince_local)!=0)
+                    {
+                        cont++;
+
+                    }
+
+
+
+                     //CIDADE
+                    if(aux_cidade!= 0)
+                    {
+                        for(k=0;k<(strlen(prince_cidade));k++)
                         {
-                            //cont++;
+                            memset(espe_cidade, 0, (strlen(prince_cidade)));
 
+                            do
+                            {
+                                espe_cidade[i] = prince_cidade[k];
+                                k++;
+                                i++;
+
+                                if(prince_cidade[k]==','||k>(strlen(prince_cidade)))
+                                {
+                                    i=0;
+                                    k++;
+                                }
+                            }while(i!=0);
+
+                            if(compara(pessoa->cidade, espe_cidade)!= 0)
+                            {
+                                cont++;
+                            }
                         }
+                    }
+                    else if(compara(pessoa->cidade, prince_cidade)!=0)
+                    {
+                        cont++;
+
+                    }
+
+
                         alma_gemea[a] = cont;
 
-                        cont*=25;
+                        cont*=100;
+                        cont/=total;
 
-                        if(cont > 0)
+                        if(cont>0)
                         {
+
                             printf("\n\n\nEh %0.2f%% compativel com \n", cont);
                             amostra(&pessoa[i], i);
-
                         }
+
+
+
 
                     }
                 }
