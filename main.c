@@ -237,11 +237,11 @@ int main()
 
 
 
-    int i=0, k, j, EOF_ctrl, nome_tamanho = 0;
+    int i=0, k, j, EOF_ctrl, nome_tamanho = 0, f=0;
     char objetivo, sn, c[100], objetivo_geral[50];
     FILE *banco;
 
-    int objetivo_nome, objetivo_filme, objetivo_hobbie, objetivo_local;
+    int objetivo_nome, objetivo_filme, objetivo_hobbie, objetivo_local, objetivo_compara;
     char nome[50]={'a','b'}, hobbie[50]={'a','b'}, local[50]={'a','b'}, filme[50]={'a','b'};
 
 
@@ -327,6 +327,7 @@ while(1)
             if(sn == 'n')
             {
                 break;
+                objetivo = 0;
             }
         }
     }
@@ -349,9 +350,13 @@ while(1)
 
 
         printf("\n\nHOLA AMIGO, BEM VINDO AO TIMBERATO\nO LUGAR CERTO PARA ENCONTRAR A PESSOA CERTA.");
-        printf("\nPor favor, por qual das seguintes opcoes voce quer procurar? (nome / filmes / local / hobbie): ");
+        printf("\nPor favor, por qual das seguintes opcoes voce quer procurar? (nome / filmes / local / hobbie / ALL_COMPARE): ");
         gets(objetivo_geral);
         fflush(stdin);
+
+
+        //ALL COMPARE
+        objetivo_compara = compara(objetivo_geral, "ALL_COMPARE");
 
 
         //NOME
@@ -766,6 +771,7 @@ while(1)
                         cont*=100;
                         cont/=total;
 
+
                         if(cont>0)
                         {
 
@@ -787,7 +793,6 @@ while(1)
 
 
 
-
         fclose(banco);
 
 
@@ -797,7 +802,7 @@ while(1)
 
 
 
-    }
+
 
 
 
@@ -810,12 +815,5 @@ while(1)
 
     return 0;
 }
-
-
-
-
-
-
-
 
 
